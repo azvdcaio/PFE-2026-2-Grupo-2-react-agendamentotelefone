@@ -11,6 +11,10 @@ const WHATSAPP_FISIOTERAPIA =
   "https://wa.me/5521999999999?text=" +
   encodeURIComponent("Olá! Gostaria de agendar uma avaliação de fisioterapia.");
 
+/** Link do WhatsApp com mensagem pronta (só dígitos, com DDI e DDD). */
+const linkWhatsapp = (numero, mensagem) =>
+  `https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`;
+
 /** Dados de cada marca usados por Contato e Agendamento (a chave também nomeia o localStorage do calendário). */
 export const empresas = {
   pkz: {
@@ -19,6 +23,7 @@ export const empresas = {
     marca: "PKZ Lab",
     telefone: "+55 21 97265-7266",
     telefoneLink: "tel:+5521972657266",
+    whatsapp: linkWhatsapp("5521972657266", "Olá! Gostaria de agendar uma aula experimental na PKZ Lab."),
     instagram: "https://www.instagram.com/playmakerz_pkz/",
     tiktok: "https://www.tiktok.com/@pkz_lab",
     agendar: "Agendar uma aula experimental",
@@ -31,6 +36,7 @@ export const empresas = {
     marca: "One To One",
     telefone: "+55 21 97106-7347",
     telefoneLink: "tel:+5521971067347",
+    whatsapp: linkWhatsapp("5521971067347", "Olá! Gostaria de agendar uma aula experimental na One To One."),
     instagram: "https://www.instagram.com/studioonetoone/",
     agendar: "Agendar uma aula experimental",
     contato: "/one-to-one/contato",
